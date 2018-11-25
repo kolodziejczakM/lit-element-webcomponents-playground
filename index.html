@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles.css">
+
+        <title>WebComponents Native API test 2019</title>
+
+        <!--
+            <script defer src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+            about 100KB, not needed for new browsers
+        -->
+    </head>
+    <body>
+        <header class="header">
+            <img class="banner" src="./litElementLogo.png">
+            <h1>WebComponents Lit-element API playground</h1>
+        </header>
+        <section class="row">
+            <select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </section>
+        <section class="row custom-dropdown-wrapper">
+            <featured-dropdown
+                id="ft-dropdown"
+                on-change-handler="dropdownCallback"
+                chosen-option='{ "label": "Poland", "value": "PL" }'
+                options='[
+                    { "label": "Poland", "value": "PL" },
+                    { "label": "Germany", "value": "DE" },
+                    { "label": "Sweden", "value": "SE" },
+                    { "label": "Norway", "value": "NO" }
+                ]'
+            >
+                <img src="./angle-arrow-down.svg" slot="dropdown-arrow" />
+            </featured-dropdown>
+        </section>
+
+        <div class="separator"></div>
+
+        <div id="my-app-root"></div>
+
+        <!-- SCRIPTS -->
+        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+        <script src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+        <!--
+            needed when targeting to ES5 cause according to the spec, only ES6 classes
+            may be passed to the native customElements.define API (see: featured-dropdown.mjs)
+        -->
+
+        <!-- <script src="./dist/main.js"></script> uncomment to check if production build works. To build, run: npm run build -->
+        
+        <script type="module" src="./src/index.js"></script>
+        <!-- could be also .mjs extension -->
+        <script>
+            var dropdownCallback = option => {
+                console.log('Callback called, selected: ', option);
+            };
+
+            document.getElementById('ft-dropdown').addEventListener('dropdownValueChanged', e => {
+                console.log('instead of using callbacks!, selected: ', e.detail);
+            });
+        </script>
+    </body>
+</html>
