@@ -95,6 +95,7 @@ class FeaturedDropdown extends LitElement {
                 }
 
                 :host {
+                    --icon-display: inline-block;
                     --light-gray: #d3d3d3;
                     --gray: #a9a9a9;
                     --black: #000;
@@ -143,9 +144,11 @@ class FeaturedDropdown extends LitElement {
                 }
 
                 ::slotted(*) {
+                    display: var(--icon-display);
                     width: var(--icon-dimension);
                     height: var(--icon-dimension);
                 }
+
             </style>
             <div class="dropdown">
                 <div @click="${this.onExpandClick}" class="selected-option">

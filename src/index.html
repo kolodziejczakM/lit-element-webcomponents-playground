@@ -10,7 +10,7 @@
     </head>
     <body>
         <header class="header">
-            <img class="banner" src="./litElementLogo.png" />
+            <img class="banner" src="./images/litElementLogo.png" />
             <h1>WebComponents Lit-element API playground</h1>
         </header>
         <section class="row">
@@ -32,23 +32,11 @@
                     { "label": "Norway", "value": "NO" }
                 ]'
             >
-                <img src="./angle-arrow-down.svg" slot="dropdown-arrow" />
+                <img class="img" src="./images/angle-arrow-down.svg" slot="dropdown-arrow" />
             </featured-dropdown>
         </section>
 
         <div class="separator"></div>
-
-        <!-- SCRIPTS -->
-        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-        <script src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-        <!--
-            needed when targeting to ES5 cause according to the spec, only ES6 classes
-            may be passed to the native customElements.define API (see: featured-dropdown.mjs)
-        -->
-
-        <!--
-            <script src="./dist/main.js"></script> uncomment to check if production build works. To build, run: npm run build
-        -->
 
         <script type="module" src="./src/index.js"></script>
         <script>
