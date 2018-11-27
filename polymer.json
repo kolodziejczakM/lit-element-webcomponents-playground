@@ -2,7 +2,7 @@
     "npm": true,
     "moduleResolution": "node",
     "entrypoint": "src/index.html",
-    "shell": "src/index.js",
+    "shell": "prebuild/index.js",
     "extraDependencies": ["node_modules/@webcomponents/webcomponentsjs/**"],
     "sources": ["images/*", "styles.css"],
     "builds": [

@@ -32,7 +32,8 @@
 
         <div class="separator"></div>
 
-        <script type="module" src="./src/index.js"></script>
+        <!-- <script type="module" src="./src/index.js"></script> native javascript (without TS) -->
+        <script type="module" src="./prebuild/index.js"></script>
         <script>const dropdown=document.getElementById("ft-dropdown");dropdown.onChangeHandler=option=>{console.log("Callback called, selected: ",option)};dropdown.addEventListener("dropdownValueChanged",e=>{console.log("instead of using callbacks!, selected: ",e.detail)});</script>
     
 

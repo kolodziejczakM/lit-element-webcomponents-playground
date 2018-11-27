@@ -1,12 +1,12 @@
 {
   "entrypoint": "src/index.html",
-  "shell": "src/index.js",
+  "shell": "prebuild/index.js",
   "fragments": [],
   "sources": [
     "images/*",
     "styles.css",
     "src/index.html",
-    "src/index.js"
+    "prebuild/index.js"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",

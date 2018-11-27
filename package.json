@@ -1,20 +1,23 @@
 {
-  "name": "lit-element-webcomponents-playground",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "polymer build",
-    "dev": "polymer serve",
-    "prod": "polymer serve build/featuredDropdown"
-  },
-  "author": "Marcin Kołodziejczak",
-  "license": "MIT",
-  "dependencies": {
-    "@polymer/lit-element": "^0.6.3"
-  },
-  "devDependencies": {
-    "@webcomponents/webcomponentsjs": "^2.2.0"
-  }
+    "name": "lit-element-webcomponents-playground",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "polymer build",
+        "build:ts": "npx tsc --project tsconfig.json",
+        "watch:ts": "npx tsc --project tsconfig.json --watch",
+        "dev": "polymer serve",
+        "prod": "polymer serve build/featuredDropdown"
+    },
+    "author": "Marcin Kołodziejczak",
+    "license": "MIT",
+    "dependencies": {
+        "@polymer/lit-element": "^0.6.3"
+    },
+    "devDependencies": {
+        "@webcomponents/webcomponentsjs": "^2.2.0",
+        "typescript": "^3.1.6"
+    }
 }

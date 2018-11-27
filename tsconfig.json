@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "ES6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "target": "ES6",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "prebuild",
+        "lib": ["es2015"]
+    },
+    "include": ["./src/**/*"],
+    "exclude": [
+        "node_modules"
+    ]
+}
