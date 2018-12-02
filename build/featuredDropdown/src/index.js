@@ -6,7 +6,6 @@ const customElement=tagName=>clazz=>{window.customElements.define(tagName,clazz)
                 }
 
                 :host {
-                    --icon-display: inline-block;
                     --light-gray: #d3d3d3;
                     --gray: #a9a9a9;
                     --black: #000;
@@ -55,14 +54,13 @@ const customElement=tagName=>clazz=>{window.customElements.define(tagName,clazz)
                 }
 
                 ::slotted(*) {
-                    display: var(--icon-display);
                     width: var(--icon-dimension);
                     height: var(--icon-dimension);
                 }
 
             </style>
             <div class="dropdown">
-                <div @click="${this.onExpandClick}" class="selected-option div">
+                <div @click="${this.onExpandClick}" class="selected-option">
                     <span class="selected-option__label">${this.chosenOption.label}</span>
                     <slot name="dropdown-arrow">Your icon here</slot>
                 </div>
