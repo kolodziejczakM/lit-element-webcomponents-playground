@@ -62,7 +62,7 @@ const customElement=tagName=>clazz=>{window.customElements.define(tagName,clazz)
 
             </style>
             <div class="dropdown">
-                <div @click="${this.onExpandClick}" class="selected-option">
+                <div @click="${this.onExpandClick}" class="selected-option div">
                     <span class="selected-option__label">${this.chosenOption.label}</span>
                     <slot name="dropdown-arrow">Your icon here</slot>
                 </div>

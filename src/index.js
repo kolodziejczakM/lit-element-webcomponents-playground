@@ -10,13 +10,24 @@ const JsonType = {
     }
 };
 
+// shouldUpdate(changedProperties) == shouldComponentUpdate
+// update(changedProperties) - called before render. Setting properties inside this method will not trigger another update. 
+// firstUpdated(changedProperties) == componentDidMount
+// updated(changedProperties) == componentWillReceiveProps / getDerivedStateFromProps
+// updateComplete - called after update, returns promise
+// requestUpdate(name?, oldValue?) == forceUpdate
+// createRenderRoot() -  Implement to customize where the element's template is rendered by returning an element into which to render.
+// By default this creates a shadowRoot for the element.
+
+// + native lifecycle methods.
+
 class FeaturedDropdown extends LitElement {
     static get properties() {
         return {
             chosenOption: {
                 type: JsonType,
                 attribute: 'chosen-option',
-                // reflect: true, // two way data binding possibility
+                // reflect: true,
                 hasChanged(newVal, oldVal) {
                     if (oldVal === undefined) {
                         return true;
@@ -95,7 +106,6 @@ class FeaturedDropdown extends LitElement {
                 }
 
                 :host {
-                    --icon-display: inline-block;
                     --light-gray: #d3d3d3;
                     --gray: #a9a9a9;
                     --black: #000;
@@ -144,7 +154,6 @@ class FeaturedDropdown extends LitElement {
                 }
 
                 ::slotted(*) {
-                    display: var(--icon-display);
                     width: var(--icon-dimension);
                     height: var(--icon-dimension);
                 }

@@ -25,7 +25,3 @@
     border-bottom: 1px solid var(--gray);
     margin-bottom: 10px;
 }
-
-.img {
-    display: var(--icon-display);
-}
