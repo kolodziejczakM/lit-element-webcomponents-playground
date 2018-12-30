@@ -1,20 +1,28 @@
 {
-  "name": "lit-element-webcomponents-playground",
-  "version": "1.0.0",
-  "description": "",
-  "main": "build/featuredDropdown/src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "polymer build",
-    "dev": "polymer serve",
-    "prod": "polymer serve build/featuredDropdown"
-  },
-  "author": "Marcin Kołodziejczak",
-  "license": "MIT",
-  "dependencies": {
-    "@polymer/lit-element": "^0.6.3"
-  },
-  "devDependencies": {
-    "@webcomponents/webcomponentsjs": "^2.2.0"
-  }
+    "name": "lit-element-webcomponents-playground",
+    "version": "2.0.0",
+    "description": "",
+    "main": "dist/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "polymer build",
+        "dev": "polymer serve",
+        "prod": "polymer serve build/featuredDropdown"
+    },
+    "author": "Marcin Kołodziejczak",
+    "license": "MIT",
+    "dependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.3",
+        "@polymer/lit-element": "^0.6.3",
+        "babel-loader": "^8.0.4",
+        "webpack": "^4.28.3",
+        "webpack-cli": "^3.1.2"
+    },
+    "devDependencies": {
+        "@webcomponents/webcomponentsjs": "^2.2.0"
+    },
+    "peerDependencies": {
+        "@polymer/lit-element": "^0.6.3"
+    }
 }

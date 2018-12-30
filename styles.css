@@ -1,5 +1,6 @@
 :root {
-    --gray: #3a3a3a;
+    --light-gray: #3a3a3a;
+    --image-display: none;
 }
 
 .header {
@@ -23,4 +24,13 @@
 .separator {
     border-bottom: 1px solid var(--gray);
     margin-bottom: 10px;
+}
+
+div {
+    color: red;
+    text-align: right;
+}
+
+.img {
+    display: var(--image-display);
 }

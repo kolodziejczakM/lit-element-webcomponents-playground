@@ -106,16 +106,21 @@ class FeaturedDropdown extends LitElement {
                 }
 
                 :host {
-                    --light-gray: #d3d3d3;
+                    --image-display: inline-block;
+                    --light-gray-default: orange;
                     --gray: #a9a9a9;
                     --black: #000;
                     --white: #fff;
                     --icon-dimension: 25px;
+                    color: var(--black);
 
                     font-family: 'sans-serif, Helvetica';
                     font-size: 14px;
                     cursor: pointer;
-                    color: var(--black);
+                }
+
+                :host([background]) {
+                    --light-gray-default: var(--light-gray);
                 }
 
                 .dropdown {
@@ -150,10 +155,11 @@ class FeaturedDropdown extends LitElement {
                 }
 
                 .option:hover {
-                    background: var(--light-gray);
+                    background: var(--light-gray-default);
                 }
 
                 ::slotted(*) {
+                    display: var(--image-display);
                     width: var(--icon-dimension);
                     height: var(--icon-dimension);
                 }

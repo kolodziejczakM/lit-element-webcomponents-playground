@@ -9,9 +9,7 @@
     "src/index.js"
   ],
   "extraDependencies": [
-    "bower_components/webcomponentsjs/*.js",
-    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
-    "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+    "bower_components/webcomponentsjs/*.js"
   ],
   "builds": [
     {
