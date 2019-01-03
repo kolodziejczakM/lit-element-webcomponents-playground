@@ -2,12 +2,13 @@
     "name": "lit-element-webcomponents-playground",
     "version": "2.0.0",
     "description": "",
-    "main": "dist/main.js",
+    "main": "dist/bundle.esm.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "polymer build",
         "dev": "polymer serve",
-        "prod": "polymer serve build/featuredDropdown"
+        "prod": "polymer serve build/featuredDropdown",
+        "esm-build": "npx rollup -c"
     },
     "author": "Marcin Kołodziejczak",
     "license": "MIT",
