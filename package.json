@@ -1,23 +1,27 @@
 {
     "name": "lit-element-webcomponents-playground",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "",
-    "main": "dist/bundle.esm.js",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "polymer build",
-        "dev": "polymer serve",
-        "prod": "polymer serve build/featuredDropdown",
-        "esm-build": "npx rollup -c"
+        "dev": "browser-sync start --s 'public' -f 'public/build' & tsc -w",
+        "build": "tsc",
+        "deploy": "npx rollup -c"
     },
     "author": "Marcin Kołodziejczak",
     "license": "MIT",
     "dependencies": {
-        "@babel/core": "^7.2.2",
-        "@babel/preset-env": "^7.2.3",
-        "babel-loader": "^8.0.4",
-        "webpack": "^4.28.3",
         "@polymer/lit-element": "^0.6.3",
-        "webpack-cli": "^3.1.2"
+        "rollup": "^1.0.2",
+        "typescript": "^3.2.2"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.3",
+        "tslint": "^5.12.0",
+        "tslint-config-airbnb": "^5.11.1",
+        "tslint-config-prettier": "^1.17.0"
     }
 }

@@ -2,8 +2,8 @@ import { LitElement, html } from '@polymer/lit-element';
 
 // Declaring custom types (here handling object / array passed in HTML) - basically: innerHTML rendering support
 const JsonType = {
-    fromAttribute: attr => {
-        return typeof attr === 'string' ? JSON.parse(attr) : attr;
+    fromAttribute: attribute => {
+        return typeof attribute === 'string' ? JSON.parse(attribute) : attribute;
     },
     toAttribute: prop => {
         return typeof prop !== 'string' ? JSON.stringify(prop) : prop;
@@ -21,7 +21,7 @@ const JsonType = {
 
 // + native lifecycle methods.
 
-export default class FeaturedDropdown extends LitElement {
+class FeaturedDropdown extends LitElement {
     static get properties() {
         return {
             chosenOption: {
