@@ -194,5 +194,3 @@ class FeaturedDropdown extends litElement.LitElement {
 }
 
 customElements.define('featured-dropdown', FeaturedDropdown);
-
-module.exports = FeaturedDropdown;
