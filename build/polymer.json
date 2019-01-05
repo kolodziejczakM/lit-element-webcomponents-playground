@@ -14,7 +14,7 @@
   "builds": [
     {
       "name": "featuredDropdown",
-      "bundle": true,
+      "bundle": false,
       "js": {
         "minify": true
       }
