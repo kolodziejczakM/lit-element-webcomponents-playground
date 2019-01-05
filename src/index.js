@@ -21,7 +21,7 @@ const JsonType = {
 
 // + native lifecycle methods.
 
-class FeaturedDropdown extends LitElement {
+export default class FeaturedDropdown extends LitElement {
     static get properties() {
         return {
             chosenOption: {
