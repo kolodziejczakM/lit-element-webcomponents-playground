@@ -2,7 +2,7 @@
     "name": "lit-element-webcomponents-playground",
     "version": "2.0.0",
     "description": "",
-    "main": "dist/main.js",
+    "main": "build/featuredDropdown/src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "polymer build",
