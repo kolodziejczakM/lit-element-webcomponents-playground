@@ -2,7 +2,7 @@
     "name": "lit-element-webcomponents-playground",
     "version": "2.0.0",
     "description": "",
-    "main": "build/featuredDropdown/src/index.js",
+    "main": "dist/main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "polymer build",
@@ -16,7 +16,9 @@
         "@babel/preset-env": "^7.2.3",
         "babel-loader": "^8.0.4",
         "webpack": "^4.28.3",
-        "webpack-cli": "^3.1.2",
+        "webpack-cli": "^3.1.2"
+    },
+    "peerDependencies": {
         "@polymer/lit-element": "^0.6.3"
     }
 }
