@@ -7,9 +7,13 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "browser-sync start --s 'public' -f 'public/build' & tsc -w",
-        "build": "tsc",
-        "deploy": "npx rollup -c"
+        "dev-server": "browser-sync start --s 'public' -f 'public'",
+        "transpile": "tsc",
+        "transpile:watch": "tsc -w",
+        "bundle:prod": "npx rollup --config rollup.config.prod.js",
+        "bundle:dev": "npx rollup --config rollup.config.dev.js",
+        "bundle:watch": "npx rollup --config rollup.config.dev.js --watch",
+        "dev": "npm run dev-server & npm run bundle:watch & npm run transpile:watch"
     },
     "author": "Marcin Kołodziejczak",
     "license": "MIT",
@@ -21,6 +25,7 @@
     },
     "devDependencies": {
         "browser-sync": "^2.26.3",
+        "rollup-plugin-node-resolve": "^4.0.0",
         "tslint": "^5.12.0",
         "tslint-config-airbnb": "^5.11.1",
         "tslint-config-prettier": "^1.17.0"

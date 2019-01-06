@@ -1,7 +1,7 @@
 import { LitElement, html } from '@polymer/lit-element';
 const JsonType = {
-    fromAttribute: attribute => {
-        return typeof attribute === 'string' ? JSON.parse(attribute) : attribute;
+    fromAttribute: attr => {
+        return typeof attr === 'string' ? JSON.parse(attr) : attr;
     },
     toAttribute: prop => {
         return typeof prop !== 'string' ? JSON.stringify(prop) : prop;

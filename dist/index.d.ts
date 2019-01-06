@@ -3,7 +3,7 @@ export default class FeaturedDropdown extends LitElement {
     static readonly properties: {
         chosenOption: {
             type: {
-                fromAttribute: (attribute: any) => any;
+                fromAttribute: (attr: any) => any;
                 toAttribute: (prop: any) => string;
             };
             attribute: string;
@@ -11,7 +11,7 @@ export default class FeaturedDropdown extends LitElement {
         };
         options: {
             type: {
-                fromAttribute: (attribute: any) => any;
+                fromAttribute: (attr: any) => any;
                 toAttribute: (prop: any) => string;
             };
         };
