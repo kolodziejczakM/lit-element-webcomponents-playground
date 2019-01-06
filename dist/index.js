@@ -1,74 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
-
-const JsonType = {
-    fromAttribute: attribute => {
-        return typeof attribute === 'string' ? JSON.parse(attribute) : attribute;
-    },
-    toAttribute: prop => {
-        return typeof prop !== 'string' ? JSON.stringify(prop) : prop;
-    }
-};
-class FeaturedDropdown extends LitElement {
-    static get properties() {
-        return {
-            chosenOption: {
-                type: JsonType,
-                attribute: 'chosen-option',
-                hasChanged(newVal, oldVal) {
-                    if (oldVal === undefined) {
-                        return true;
-                    }
-                    return newVal.value !== oldVal.value;
-                }
-            },
-            options: {
-                type: JsonType
-            },
-            onChangeHandler: {
-                type: Function,
-                attribute: 'on-change-handler'
-            },
-            isExpanded: {
-                type: Boolean,
-                attribute: 'is-expanded'
-            }
-        };
-    }
-    constructor() {
-        super();
-        this.options = [];
-        this.chosenOption = { label: '(no options)', value: null };
-        this.isExpanded = false;
-        this.onOutsideClick = this.onOutsideClick.bind(this);
-    }
-    onExpandClick() {
-        if (this.options.length) {
-            this.isExpanded = true;
-        }
-    }
-    collapse() {
-        this.isExpanded = false;
-    }
-    onChange(event) {
-        const selectedOption = JSON.parse(event.target.getAttribute('value'));
-        this.chosenOption = selectedOption;
-        this.collapse();
-        this.onChangeHandler(selectedOption);
-        this.dispatchEvent(new CustomEvent('dropdownValueChanged', { detail: selectedOption }));
-    }
-    firstUpdated() {
-        document.addEventListener('click', this.onOutsideClick);
-    }
-    disconnectedCallback() {
-        document.removeEventListener('click', this.onOutsideClick);
-    }
-    onOutsideClick(event) {
-        if (event.target !== this && !event.target.slot) {
-            this.collapse();
-        }
-    }
-    render() {
-        return html `
+import{LitElement as t,html as e}from"@polymer/lit-element";const i={fromAttribute:t=>"string"==typeof t?JSON.parse(t):t,toAttribute:t=>"string"!=typeof t?JSON.stringify(t):t};class o extends t{static get properties(){return{chosenOption:{type:i,attribute:"chosen-option",hasChanged:(t,e)=>void 0===e||t.value!==e.value},options:{type:i},onChangeHandler:{type:Function,attribute:"on-change-handler"},isExpanded:{type:Boolean,attribute:"is-expanded"}}}constructor(){super(),this.options=[],this.chosenOption={label:"(no options)",value:null},this.isExpanded=!1,this.onOutsideClick=this.onOutsideClick.bind(this)}onExpandClick(){this.options.length&&(this.isExpanded=!0)}collapse(){this.isExpanded=!1}onChange(t){const e=JSON.parse(t.target.getAttribute("value"));this.chosenOption=e,this.collapse(),this.onChangeHandler(e),this.dispatchEvent(new CustomEvent("dropdownValueChanged",{detail:e}))}firstUpdated(){document.addEventListener("click",this.onOutsideClick)}disconnectedCallback(){document.removeEventListener("click",this.onOutsideClick)}onOutsideClick(t){t.target===this||t.target.slot||this.collapse()}render(){return e`
             <style>
                 :host,
                 :host * {
@@ -140,19 +70,16 @@ class FeaturedDropdown extends LitElement {
                     <span class="selected-option__label">${this.chosenOption.label}</span>
                     <slot name="dropdown-arrow">Your icon here</slot>
                 </div>
-                <ul class="${this.isExpanded ? 'options--expanded' : 'options'}">
-                    ${this.options.map(option => html `
+                <ul class="${this.isExpanded?"options--expanded":"options"}">
+                    ${this.options.map(t=>e`
                                     <option
                                         @click="${this.onChange}"
                                         class="option"
-                                        value="${JSON.stringify(option)}"
+                                        value="${JSON.stringify(t)}"
                                     >
-                                        ${option.label}
+                                        ${t.label}
                                     </option>
                                 `)}
                 </ul>
             </div>
-        `;
-    }
-}
-customElements.define('featured-dropdown', FeaturedDropdown);
+        `}}customElements.define("featured-dropdown",o);export default o;

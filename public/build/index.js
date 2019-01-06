@@ -7,7 +7,7 @@ const JsonType = {
         return typeof prop !== 'string' ? JSON.stringify(prop) : prop;
     }
 };
-class FeaturedDropdown extends LitElement {
+export default class FeaturedDropdown extends LitElement {
     static get properties() {
         return {
             chosenOption: {

@@ -16,6 +16,7 @@
     "dependencies": {
         "@polymer/lit-element": "^0.6.3",
         "rollup": "^1.0.2",
+        "rollup-plugin-terser": "^4.0.1",
         "typescript": "^3.2.2"
     },
     "devDependencies": {

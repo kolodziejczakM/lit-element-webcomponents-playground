@@ -10,7 +10,7 @@
         "experimentalDecorators": true,
         "removeComments": true,
         "sourceMap": false,
-        "declarationDir": "./public/build",
+        "declarationDir": "dist",
         "outDir": "public/build"
     },
     "include": ["./src/**/*"]
