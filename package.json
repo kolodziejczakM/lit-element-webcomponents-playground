@@ -6,21 +6,22 @@
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "test": "jest",
-        "dev-server": "browser-sync start --s 'public' -f 'public'",
+        "test:server": "browser-sync start -s 'public' --port 4000",
+        "test:browsers": "testcafe chrome,firefox tests",
+        "test:bootstrap": "run-s bundle:dev test:server",
+        "test": "run-p -r test:bootstrap test:browsers",
+        "dev-server": "browser-sync start -s 'public' -f 'public' --port 4000",
         "transpile": "tsc",
         "transpile:watch": "tsc -w",
         "bundle:prod": "npx rollup --config rollup.config.prod.js",
         "bundle:dev": "npx rollup --config rollup.config.dev.js",
         "bundle:watch": "npx rollup --config rollup.config.dev.js --watch",
-        "dev": "npm run dev-server & npm run bundle:watch & npm run transpile:watch"
+        "dev": "run-p dev-server bundle:watch transpile:watch"
     },
     "author": "Marcin Kołodziejczak",
     "license": "MIT",
     "dependencies": {
         "@polymer/lit-element": "^0.6.3",
-        "@types/jest": "^23.3.12",
-        "@types/puppeteer": "^1.11.1",
         "babel": "^6.23.0",
         "rollup": "^1.0.2",
         "rollup-plugin-terser": "^4.0.1",
@@ -29,10 +30,9 @@
     "devDependencies": {
         "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "browser-sync": "^2.26.3",
-        "jest": "^23.6.0",
-        "jest-cli": "^23.6.0",
-        "puppeteer": "^1.11.0",
+        "npm-run-all": "^4.1.5",
         "rollup-plugin-node-resolve": "^4.0.0",
+        "testcafe": "^0.23.3",
         "tslint": "^5.12.0",
         "tslint-config-airbnb": "^5.11.1",
         "tslint-config-prettier": "^1.17.0"

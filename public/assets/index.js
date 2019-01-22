@@ -1,4 +1,4 @@
-var bundleWs1547381396406 = (function () {
+var bundleWs1548196514782 = (function () {
     'use strict';
 
     /**
@@ -16,7 +16,6 @@ var bundleWs1547381396406 = (function () {
      */
     const directives = new WeakMap();
     const isDirective = (o) => typeof o === 'function' && directives.has(o);
-    //# sourceMappingURL=directive.js.map
 
     /**
      * @license
@@ -45,7 +44,6 @@ var bundleWs1547381396406 = (function () {
             node = n;
         }
     };
-    //# sourceMappingURL=dom.js.map
 
     /**
      * @license
@@ -65,7 +63,6 @@ var bundleWs1547381396406 = (function () {
      * should not be written to the DOM.
      */
     const noChange = {};
-    //# sourceMappingURL=part.js.map
 
     /**
      * @license
@@ -265,7 +262,6 @@ var bundleWs1547381396406 = (function () {
      *    * (') then any non-(')
      */
     const lastAttributeNameRegex = /([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F \x09\x0a\x0c\x0d"'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;
-    //# sourceMappingURL=template.js.map
 
     /**
      * @license
@@ -363,7 +359,6 @@ var bundleWs1547381396406 = (function () {
             return fragment;
         }
     }
-    //# sourceMappingURL=template-instance.js.map
 
     /**
      * @license
@@ -423,7 +418,6 @@ var bundleWs1547381396406 = (function () {
             return template;
         }
     }
-    //# sourceMappingURL=template-result.js.map
 
     /**
      * @license
@@ -834,7 +828,6 @@ var bundleWs1547381396406 = (function () {
         (eventOptionsSupported ?
             { capture: o.capture, passive: o.passive, once: o.once } :
             o.capture);
-    //# sourceMappingURL=parts.js.map
 
     /**
      * @license
@@ -886,7 +879,6 @@ var bundleWs1547381396406 = (function () {
         }
     }
     const defaultTemplateProcessor = new DefaultTemplateProcessor();
-    //# sourceMappingURL=default-template-processor.js.map
 
     /**
      * @license
@@ -934,7 +926,6 @@ var bundleWs1547381396406 = (function () {
         return template;
     }
     const templateCaches = new Map();
-    //# sourceMappingURL=template-factory.js.map
 
     /**
      * @license
@@ -975,7 +966,6 @@ var bundleWs1547381396406 = (function () {
         part.setValue(result);
         part.commit();
     };
-    //# sourceMappingURL=render.js.map
 
     /**
      * @license
@@ -995,7 +985,6 @@ var bundleWs1547381396406 = (function () {
      * render to and update a container.
      */
     const html = (strings, ...values) => new TemplateResult(strings, values, 'html', defaultTemplateProcessor);
-    //# sourceMappingURL=lit-html.js.map
 
     /**
      * @license
@@ -1120,7 +1109,6 @@ var bundleWs1547381396406 = (function () {
             }
         }
     }
-    //# sourceMappingURL=modify-template.js.map
 
     /**
      * @license
@@ -1356,7 +1344,6 @@ var bundleWs1547381396406 = (function () {
             window.ShadyCSS.styleElement(container.host);
         }
     };
-    //# sourceMappingURL=shady-render.js.map
 
     /**
      * @license
@@ -1837,7 +1824,6 @@ var bundleWs1547381396406 = (function () {
      */
     UpdatingElement._classProperties = new Map();
     UpdatingElement.properties = {};
-    //# sourceMappingURL=updating-element.js.map
 
     /**
      * @license
@@ -1852,7 +1838,6 @@ var bundleWs1547381396406 = (function () {
      * subject to an additional IP rights grant found at
      * http://polymer.github.io/PATENTS.txt
      */
-    //# sourceMappingURL=decorators.js.map
 
     /**
      * @license
@@ -1897,7 +1882,6 @@ var bundleWs1547381396406 = (function () {
      * @param {String} Element name.
      */
     LitElement.render = render$1;
-    //# sourceMappingURL=lit-element.js.map
 
     const JsonType = {
         fromAttribute: attr => {
