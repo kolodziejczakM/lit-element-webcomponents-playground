@@ -6,8 +6,9 @@
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
+        "test:docker": "docker-compose run testcafe 'firefox,chromium --no-sandbox' /tests",
         "test:server": "browser-sync start -s 'public' --port 4000",
-        "test:browsers": "testcafe chrome,firefox tests",
+        "test:browsers": "testcafe firefox tests",
         "test:bootstrap": "run-s bundle:dev test:server",
         "test": "run-p -r test:bootstrap test:browsers",
         "dev-server": "browser-sync start -s 'public' -f 'public' --port 4000",

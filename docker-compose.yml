@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build: ./
+    volumes:
+      - ./:/usr/src/dockerApps/lit-element-env
+    ports:
+      - 4000:4000
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+    command:
+      npm run dev
+  testcafe:
+    image: testcafe/testcafe
+    volumes:
+      - ./tests/:/tests
+    network_mode: host
